@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightyellow;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+button {
+  font-family: inherit;
+  background-color: wheat;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 120px;
+  padding: 10px;
+  font-size: 1rem;
+  margin: 10px;
+}
+
+.answer-btn {
+  width: fit-content;
+}
+
+.score {
+  border-bottom: 1px solid lightgrey;
+  font-size: 1.5rem;
+}
+
+.loading {
+  font-size: 3rem;
+  color: rgb(99, 142, 206);
+}
