@@ -28,16 +28,15 @@ function App() {
     setLoading(true);
     setGameOver(false);
 
-    // try {
-    const newQuestions = await fetchQuizQuestions(
-      TOTAL_QUESTIONS,
-      QuizDifficulty.MEDIUM
-    );
-
-    setQuestions(newQuestions);
-    // } catch (error) {
-    //   console.log(error);
-    // }
+    try {
+      const newQuestions = await fetchQuizQuestions(
+        TOTAL_QUESTIONS,
+        QuizDifficulty.MEDIUM
+      );
+      setQuestions(newQuestions);
+    } catch (error) {
+      console.log(error);
+    }
 
     setScore(0);
     setUserAnswers([]);
@@ -77,9 +76,7 @@ function App() {
       <div className="App">
         <h1>React Quiz</h1>
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
-          <button onClick={startTrivia}>
-            Start Quiz
-          </button>
+          <button onClick={startTrivia}>Start Quiz</button>
         ) : null}
 
         {!gameOver ? <p className="score">Score: {score}</p> : null}
@@ -100,9 +97,7 @@ function App() {
         !loading &&
         userAnswers.length === number + 1 &&
         number !== TOTAL_QUESTIONS - 1 ? (
-          <button onClick={nextQuestion}>
-            Next
-          </button>
+          <button onClick={nextQuestion}>Next</button>
         ) : null}
       </div>
     </>
